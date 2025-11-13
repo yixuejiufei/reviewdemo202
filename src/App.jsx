@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { track } from '@vercel/analytics'
 
 function App() {
   const [emailCopied, setEmailCopied] = useState(false)
@@ -7,6 +8,12 @@ function App() {
     navigator.clipboard.writeText(serviceEmail)
     setEmailCopied(true)
     setTimeout(() => setEmailCopied(false), 2000)
+    
+    // 记录复制邮箱事件到Vercel Analytics
+    track('email_copied', {
+      email: serviceEmail,
+      timestamp: new Date().toISOString()
+    })
   }
 
   return (
