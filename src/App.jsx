@@ -100,12 +100,13 @@ function App() {
                 <p>Receive specific recommendations for product improvements</p>
               </div>
             </div>
+            <p className="promo-message">Free insights available in limited quantities, first come first served.</p>
           </div>
         </section>
       </main>
 
       <footer className="footer">
-        <p>© 2024 ReviewInsight. All rights reserved.</p>
+        <p>© 2025 ReviewInsight. All rights reserved.</p>
       </footer>
     </div>
   )

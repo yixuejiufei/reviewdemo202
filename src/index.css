@@ -251,6 +251,14 @@ body {
   opacity: 0.8;
 }
 
+.promo-message {
+  font-weight: bold;
+  color: #e53e3e; /* 改为醒目的红色 */
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
 @media (max-width: 768px) {
   .App {
     padding: 10px;
