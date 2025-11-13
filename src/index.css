@@ -1,0 +1,311 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.main {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.hero {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 40px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.email-instruction {
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.instruction-content {
+  margin-bottom: 40px;
+}
+
+.instruction-content h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.instruction-content ol {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 12px;
+  counter-reset: step-counter;
+}
+
+.instruction-content li {
+  list-style: none;
+  margin-bottom: 15px;
+  padding-left: 40px;
+  position: relative;
+  line-height: 1.6;
+  color: #34495e;
+}
+
+.instruction-content li:last-child {
+  margin-bottom: 0;
+}
+
+.instruction-content li:before {
+  content: counter(step-counter);
+  counter-increment: step-counter;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.email-container {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.email-box {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 600px;
+  width: 100%;
+  color: white;
+  box-shadow: 0 10px 30px rgba(240, 147, 251, 0.3);
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.email-icon {
+  font-size: 3rem;
+  flex-shrink: 0;
+}
+
+.email-info {
+  flex: 1;
+}
+
+.email-label {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.email-address-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 12px 16px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.email-address {
+  font-size: 1.2rem;
+  font-weight: bold;
+  word-break: break-all;
+}
+
+.copy-button {
+  background: white;
+  color: #667eea;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.copy-button:hover {
+  background: #f0f0f0;
+  transform: translateY(-1px);
+}
+
+.copy-button:active {
+  transform: translateY(0);
+}
+
+.email-note {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.benefits {
+  text-align: center;
+}
+
+.benefits h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.benefit-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.benefit-card {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.benefit-card h4 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.benefit-card p {
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  color: white;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .hero,
+  .email-instruction {
+    padding: 20px;
+  }
+  
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+  
+  .email-box {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+  }
+  
+  .email-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .email-address-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .benefit-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .benefit-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .instruction-content ol {
+    padding: 20px 15px;
+  }
+  
+  .instruction-content li {
+    padding-left: 35px;
+    font-size: 0.95rem;
+  }
+  
+  .email-address {
+    font-size: 1rem;
+  }
+}
