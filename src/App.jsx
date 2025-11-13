@@ -1,19 +1,38 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { track } from '@vercel/analytics'
 
 function App() {
   const [emailCopied, setEmailCopied] = useState(false)
   const serviceEmail = 'zd110jifeng@gmail.com'
+  
+  // 添加页面加载事件跟踪
+  useEffect(() => {
+    // 页面加载时发送事件
+    try {
+      track('page_viewed', {
+        page: 'home',
+        timestamp: new Date().toISOString()
+      })
+      console.log('Vercel Analytics: Page view event sent')
+    } catch (error) {
+      console.error('Failed to send page view event:', error)
+    }
+  }, [])
   const copyToClipboard = () => {
     navigator.clipboard.writeText(serviceEmail)
     setEmailCopied(true)
     setTimeout(() => setEmailCopied(false), 2000)
     
-    // 记录复制邮箱事件到Vercel Analytics
-    track('email_copied', {
-      email: serviceEmail,
-      timestamp: new Date().toISOString()
-    })
+    // 记录复制邮箱事件到Vercel Analytics，添加错误处理
+    try {
+      track('email_copied', {
+        email: serviceEmail,
+        timestamp: new Date().toISOString()
+      })
+      console.log('Vercel Analytics: Email copied event sent')
+    } catch (error) {
+      console.error('Failed to send email copied event:', error)
+    }
   }
 
   return (
